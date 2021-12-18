@@ -3,6 +3,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     outline: none;
+    user-select: none;
   }
   svg * {
     transition: 0.3s;
@@ -88,6 +89,7 @@
       max-width: 1920px;
       margin: auto;
       position: absolute;
+      pointer-events: none;
   }
   .logo {
       display: block;      
@@ -112,6 +114,7 @@
   
   .monetki-images img {
       position: absolute;
+      pointer-events: none;
   }
   
   img.mon-b {
@@ -120,6 +123,7 @@
     width: 100%;
     left: 0;
     z-index: 10;
+    pointer-events: none;
   }
   
   img.mon-r {
@@ -128,6 +132,7 @@
     max-width: 40vw;
     width: 100%;
     z-index: 2;
+    pointer-events: none;
   }
   
   img.mon-l {
@@ -136,6 +141,7 @@
       max-width: 28vw;
       width: 100%;
       z-index: 2;
+      pointer-events: none;
   }
   
   img.mon-r-t {
@@ -144,11 +150,13 @@
       right: 8%;
       z-index: 2;
       width: 100%;
+      pointer-events: none;
   }
   
   img.c-t {
       left: 25%;
       top: 27%;
+      pointer-events: none;
   }
   
   .circle {
@@ -170,10 +178,6 @@
     margin-top: 6vh;
     text-align: center;
   }
-  
-  
-  
-  
   
   canvas#canvas {
       width: 100%;
@@ -366,15 +370,26 @@
       border-radius: 15px;
       background-color: #1a3a42;
       border: none;
-      max-width: 100%;
+      max-width: 460px;
+      width: 100%;
       margin-right: auto;
       margin-left: auto;
-      pointer-events: auto;
+      border: 4px solid #f8ca00!important;
+  }
+
+  #animatedModal2 {
+    max-width: 680px;
+    width: 100%;
+    padding: 36px;
   }
 
   
   #animatedModal *, #animatedModal2 *{
       font-family: 'RocknRoll One', sans-serif;
+  }
+
+  .fancybox-content {
+      padding: 40px;
   }
 
   .fancybox__container {
@@ -477,7 +492,8 @@
       background: #2c7920;
   }
   
-  .fancybox__content span {
+  .text1 span,
+  .text2 span {
      color: #f8ca00;
   }
   
@@ -497,8 +513,9 @@
   
   .logo {
       position: relative;
-      left: calc(50% - 190px);
-      max-width: 400px;
+      top: 10px;
+      left: calc(50% - 175px);
+      max-width: 350px;
       z-index: 10;
       pointer-events: none;
   }
@@ -720,6 +737,10 @@
         max-width: 92vw;
         left: calc(50% - 45vw / 1);
     }
+
+    .wrapper__background-img {
+        min-height: 700px
+    }
   }
   
   @media (max-width: 550px) {
@@ -740,10 +761,12 @@
       }
 
       .logo {
-        top: 55px;
+        top: 115px;
         margin-bottom: 20vh;
         position: relative;
         z-index: 2;
+        left: calc(50% - 150px);
+        max-width: 300px;
       }
   
       .logo img {
@@ -883,8 +906,10 @@
     }
 
      img.mon-b {
-        max-width: 86vw;
-        left: calc(50% - 43vw / 1);
+        max-width: 100%;
+        height: 450px;
+        left: 0;
+        bottom: -3px;
      }
 
      
@@ -938,12 +963,15 @@
   @media (max-height: 690px) {
 
     .circle {
-        transform: scale(0.5);
-        top: 0%;
-    }
-
+        transform: scale(0.55);
+        top: -6%;
+    }    
     .logo {
         margin-bottom: 4vh;
+        top: 88px;
+    }
+    .logo img {
+        width: 300px;
     }
 
   }
@@ -952,9 +980,9 @@
 
     .logo {
         position: absolute;
-        width: 200px;        
+        width: 240px;
         top: 92px;
-        left: 64px;
+        left: 40px;
     }
 
     .circle {
